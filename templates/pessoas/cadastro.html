@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro de Pessoas{% endblock %}
+
+{% block content %}
+    <h1>Cadastro de Pessoas</h1>
+    <form method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br>
+        <label for="idade">Idade:</label>
+        <input type="text" id="idade" name="idade" required>
+        <br>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <a href="{{ url_for('lista') }}">Ver Lista</a>
+{% endblock %}

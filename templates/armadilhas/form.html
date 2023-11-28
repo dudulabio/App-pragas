@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Cadastro de armadilhas{% endblock %}
+
+{% block content %}
+    <h1>Cadastro de armadilhas</h1>
+    <form method="POST">
+        <label for="cultura">Nome da Cultura:</label>
+        <input type="text" id="cultura" name="cultura" required>
+        <br>
+        <label for="talhao">Talhão:</label>
+        <input type="string" id="talhao" name="talhao" required>
+        <br>
+        <label for="data">Data de instalação:</label>
+        <input type="date" id="data" name="data" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <a href="{{ url_for('armadilhas_list') }}">Ver Lista</a>
+{% endblock %}

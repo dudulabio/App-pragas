@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %} Armadilhas {% endblock %}
+
+{% block nav %} 
+<li class="nav-item active">
+  <a class="nav-link" href="/">Home</a>
+</li>
+{% endblock %}
+
+{% block content %}
+    <h1>Armadilhas</h1>
+    <table class="table table-hover">
+        <tr>
+            <th>Cultura</th>
+            <th>Talhão</th>
+            <th>Data de Instalação</th>
+        </tr>
+        {% for armadilha in armadilhas %}
+        <tr>
+            <td>{{ armadilha.cultura }}</td>
+            <td>{{ armadilha.talhao}}</td>
+            <td>{{ armadilha.data}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('armadilhas_cad') }}">Cadastrar Nova Armadilha</a>
+{% endblock %}

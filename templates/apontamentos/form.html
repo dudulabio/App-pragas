@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Apontamento{% endblock %}
+{% block content %}
+    <h1>Apontamento</h1>
+    <form method="POST">
+
+      <div class="form-group">
+        <label for="cultura">Cultura:</label>
+        <select class="form-control" id="cultura" name="cultura" >
+          {% for safra in safras %}
+          <option>{{safra.cultura}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="cultivar">Cultivar:</label>
+        <select class="form-control" id="cultivar" name="cultivar" >
+          {% for safra in safras %}
+          <option>{{safra.cultivar}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="periodo">Periodo:</label>
+        <select class="form-control" id="periodo" name="periodo" >
+          {% for safra in safras %}
+          <option>{{safra.periodo}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="talhao">Talhão:</label>
+        <select class="form-control" id="talhao" name="talhao" >
+          {% for talhao in talhoes %}
+          <option>{{talhao.nome}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="armadilha">Armadilha:</label>
+        <select class="form-control" id="armadilha" name="armadilha" >
+          {% for armadilha in armadilhas %}
+          <option>{{armadilha.nome}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="praga">Praga:</label>
+        <select class="form-control" id="praga" name="praga" >
+          {% for praga in pragas %}
+          <option>{{praga.nome}}</option>
+          {% endfor %}
+        </select>
+      </div>
+     
+      <div class="form-group">
+        <label for="tecnico">Técnico:</label>
+        <select class="form-control" id="tecnico" name="tecnico" >
+          {% for tecnico in tecnicos %}
+          <option>{{tecnico.nome}}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="qtd">Quantidade:</label>
+        <input type="number" class="form-control" id="qtd" name="qtd" >
+      </div>
+      
+      <div class="form-group">
+        <label for="qtd">Data de Leitura:</label>
+        <input type="dt" class="dt" id="dt" name="dt" >
+      </div>
+      <button type="submit">Cadastrar</button>
+    </form>
+    <a href="{{ url_for('apontamentos_list') }}">Ver Lista</a>
+{% endblock %}

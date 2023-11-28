@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Adicione os imports do Bootstrap ou outros estilos aqui -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Barra de navegação padrão  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">PVD Scout</a>
+      <button class="navbar-toggler" type="button" 
+              data-toggle="collapse" data-target="#navbarNav" 
+              aria-controls="navbarNav" aria-expanded="false" 
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- bloco para os menus específicos de cada tela  -->
+          {% block nav %} {% endblock %}
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Bloco para título do conteúdo da página  -->
+      {% block tcontent%} {% endblock %}
+     
+      <table class="table table-hover thead-dark">
+        <thead class="thead-dark">
+          <tr>
+            <!-- bloco exclusivo para cabeçalho de tabela  -->
+            {% block thead %} {% endblock %}
+          </tr>
+        </thead>
+        <!-- bloco exclusivo para dados de tabela -->
+        {% block tdata %} {% endblock %}
+      </table>
+
+      <!-- bloco para os conteúdos específicos de cada página -->
+      {% block content %}
+      {% endblock %}
+      
+    </div>
+</body>
+</html>
